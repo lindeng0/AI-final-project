@@ -419,6 +419,147 @@ A small number of filings failed because the full text exceeded the model contex
 
 ---
 
+## AI scoring prompt
+
+The AI full-document semantic index is generated using a structured prompt. The goal of the prompt is to make the model act as a banking-regulation and fintech-strategy evaluator, rather than a generic sentiment classifier. The model is instructed to distinguish substantive digital transformation disclosure from generic IT, cybersecurity, or boilerplate risk language.
+
+### System prompt
+
+```text
+You are a senior banking regulator and fintech strategy expert.
+You specialize in evaluating the depth, credibility, and strategic significance of digital transformation disclosures in bank regulatory filings.
+
+You will read a cleaned visible-text version of one SEC 10-K or 10-Q filing.
+Your task is to evaluate whether the filing contains substantive digital transformation disclosure.
+
+You must distinguish substantive digital transformation from:
+- generic cybersecurity risk disclosure,
+- generic information technology risk,
+- routine IT operations,
+- regulatory boilerplate,
+- general positive business tone,
+- ordinary electronic banking mentions without strategy or implementation detail.
+
+Return valid JSON only.
+```
+
+### User prompt template
+
+```text
+You are given the full cleaned visible text of one SEC 10-K or 10-Q filing.
+
+Company/Filing metadata:
+- CIK: {cik}
+- Form: {form}
+- Filing date: {filing_date}
+- Fiscal year: {fiscal_year}
+- File name: {file_name}
+
+Please read the filing text and score the filing on the following dimensions.
+
+Dimension 1: Investment Type, 1-5
+1 = routine maintenance, generic IT operations, or generic technology risk only
+2 = compliance-driven or risk-control technology spending
+3 = system optimization or process improvement
+4 = process transformation affecting customer service, operations, lending, risk, or delivery channels
+5 = strategic innovation or business-model-level digital transformation
+
+Dimension 2: Strategic Importance, 1-5
+1 = incidental or boilerplate mention only
+2 = limited operational importance
+3 = meaningful but not central to strategy
+4 = clearly linked to strategic priorities, efficiency, growth, customer experience, or competitiveness
+5 = explicitly framed as a central strategic pillar or long-term transformation priority
+
+Dimension 3: Implementation Stage, 1-5
+1 = concept/general discussion only, or no substantive implementation evidence
+2 = planning or early preparation
+3 = pilot/partial implementation
+4 = deployed initiative or active rollout
+5 = broad operationalized implementation across major business functions
+
+Dimension 4: Time Horizon, 1-5
+1 = no clear time horizon
+2 = short-term cost/risk control
+3 = medium-term efficiency or service improvement
+4 = medium-to-long-term growth, modernization, or competitiveness
+5 = long-term strategic transformation
+
+Auxiliary Dimension: Digital Relevance, 1-5
+1 = filing contains little or no substantive digital transformation disclosure
+2 = mostly generic cybersecurity/technology risk
+3 = some digital capability, digital service, or technology-enabled process content
+4 = clear digital transformation content
+5 = highly substantive and central digital transformation evidence
+
+Confidence, 0-100
+Assess how confident you are based only on the provided filing text.
+
+Important scoring rules:
+- Do not reward generic cybersecurity risk disclosure too much.
+- Do not infer digital transformation merely from good financial performance or positive business tone.
+- Ordinary website, mobile app, online banking, or electronic banking availability should not receive high scores unless tied to strategy, investment, implementation, customer transformation, or operating model change.
+- Higher scores require evidence of strategy, investment, implementation, digital services, automation, analytics, platform modernization, AI, cloud, customer digital experience, or technology-enabled transformation.
+- If the filing only discusses cybersecurity / information systems risk, scores should usually be low.
+- If no substantive digital transformation evidence appears, assign the four main scores as 1, Digital Relevance as 1, and Confidence as 90.
+
+Return JSON only, with exactly this structure:
+{
+  "InvestmentType": 1,
+  "StrategicImportance": 1,
+  "ImplementationStage": 1,
+  "TimeHorizon": 1,
+  "DigitalRelevance": 1,
+  "Confidence": 90,
+  "Explanation": "brief explanation grounded in the filing text"
+}
+
+Full filing text:
+"""
+{full_document_text}
+"""
+```
+
+### Prompt design logic
+
+This prompt is intentionally stricter than a generic “digital sentiment” or “innovation tone” prompt. Its purpose is to reduce false positives from filings that mention technology only in generic risk disclosures. In particular:
+
+- The four main dimensions separate different aspects of digital transformation: investment depth, strategic centrality, implementation maturity, and time horizon.
+- The auxiliary `DigitalRelevance` score helps diagnose whether the filing actually contains enough digital transformation content to justify the main scores.
+- The confidence score helps identify filings where the model’s judgment may be less reliable.
+- The JSON-only output format makes the scoring process machine-readable and easier to audit.
+
+### Filing-level to firm-year AI score
+
+The model returns filing-level scores. The main filing-level score is computed as:
+
+```text
+AI_full_document_score = mean(
+    InvestmentType,
+    StrategicImportance,
+    ImplementationStage,
+    TimeHorizon
+)
+```
+
+It is then converted to a 0-100 index:
+
+```text
+AI_full_document_index_0_100_v3 = (AI_full_document_score - 1) / 4 * 100
+```
+
+Firm-year aggregation follows the annual-first rule:
+
+```text
+If a successfully scored 10-K exists for the firm-year:
+    use the 10-K score.
+Else:
+    use successfully scored 10-Q filings as fallback.
+```
+
+
+---
+
 ## Evidence-snippet experiment
 
 During development, the project also tested an evidence-snippet scoring approach:
