@@ -1,0 +1,2 @@
+﻿traditional_rows,ai_rows,merged_rows,traditional_unique_cik_year,ai_unique_cik_year,matched_ai_rows,missing_ai_rows,ai_coverage_rate,both_traditional_and_ai_rows,mean_traditional_index,median_traditional_index,mean_ai_full_document_index,median_ai_full_document_index,corr_traditional_ai
+2065,2040,2065,2065,2040,2029,36,0.9825665859564164,2029,50.02421307506053,50.02421307506053,44.446654691490814,56.25,0.24685555797608413

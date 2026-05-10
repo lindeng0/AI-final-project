@@ -1,0 +1,2 @@
+﻿panel_rows,stock_return_rows,merged_rows,matched_stock_return_rows,missing_stock_return_rows,stock_return_coverage_rate,n_nonmissing_StockReturn_annual_compound_w,mean_StockReturn_annual_compound_w,median_StockReturn_annual_compound_w
+2065,2486,2065,2065,0,1.0,2054,0.045113441622292576,0.008130288840128699
