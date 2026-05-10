@@ -434,7 +434,7 @@ For the final project, the main measure is the **full-document AI score**, becau
 
 ```text
 1. It is easier to explain as “AI reads the filing.”
-2. Poe quota was sufficient for full-document scoring.
+2. Poe quota was sufficient for full-document scoring in most cases, though a few of cases failed as previously mentioned.
 3. It avoids making the main result depend only on retrieval-selected snippets.
 4. It better matches the final-project objective rather than a publication-level measurement validation exercise.
 ```
