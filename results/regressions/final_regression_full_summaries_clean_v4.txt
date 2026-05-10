@@ -1,0 +1,512 @@
+
+====================================================================================================
+Outcome: ROA_annual_mean
+Model: M1_traditional_yearFE
+Formula: z_ROA_annual_mean ~ z_traditional + z_log_assets + C(YEAR_key)
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:      z_ROA_annual_mean   R-squared:                       0.059
+Model:                            OLS   Adj. R-squared:                  0.055
+Method:                 Least Squares   F-statistic:                     18.80
+Date:                Sun, 10 May 2026   Prob (F-statistic):           1.48e-23
+Time:                        15:03:45   Log-Likelihood:                -2706.2
+No. Observations:                2029   AIC:                             5430.
+Df Residuals:                    2020   BIC:                             5481.
+Df Model:                           8                                         
+Covariance Type:              cluster                                         
+=======================================================================================
+                          coef    std err          z      P>|z|      [0.025      0.975]
+---------------------------------------------------------------------------------------
+Intercept               0.1385      0.034      4.095      0.000       0.072       0.205
+C(YEAR_key)[T.2019]    -0.0289      0.035     -0.823      0.410      -0.098       0.040
+C(YEAR_key)[T.2020]    -0.4951      0.068     -7.256      0.000      -0.629      -0.361
+C(YEAR_key)[T.2021]     0.1354      0.064      2.100      0.036       0.009       0.262
+C(YEAR_key)[T.2022]    -0.0235      0.069     -0.341      0.733      -0.159       0.112
+C(YEAR_key)[T.2023]    -0.2991      0.065     -4.618      0.000      -0.426      -0.172
+C(YEAR_key)[T.2024]    -0.4118      0.065     -6.303      0.000      -0.540      -0.284
+z_traditional           0.0449      0.032      1.397      0.162      -0.018       0.108
+z_log_assets            0.0542      0.038      1.425      0.154      -0.020       0.129
+==============================================================================
+Omnibus:                     1321.854   Durbin-Watson:                   1.293
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):           382399.401
+Skew:                          -1.904   Prob(JB):                         0.00
+Kurtosis:                      70.147   Cond. No.                         7.98
+==============================================================================
+
+Notes:
+[1] Standard Errors are robust to cluster correlation (cluster)
+
+====================================================================================================
+Outcome: ROA_annual_mean
+Model: M2_ai_yearFE
+Formula: z_ROA_annual_mean ~ z_ai + z_log_assets + C(YEAR_key)
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:      z_ROA_annual_mean   R-squared:                       0.056
+Model:                            OLS   Adj. R-squared:                  0.053
+Method:                 Least Squares   F-statistic:                     19.89
+Date:                Sun, 10 May 2026   Prob (F-statistic):           7.96e-25
+Time:                        15:03:45   Log-Likelihood:                -2708.6
+No. Observations:                2029   AIC:                             5435.
+Df Residuals:                    2020   BIC:                             5486.
+Df Model:                           8                                         
+Covariance Type:              cluster                                         
+=======================================================================================
+                          coef    std err          z      P>|z|      [0.025      0.975]
+---------------------------------------------------------------------------------------
+Intercept               0.1373      0.034      4.063      0.000       0.071       0.203
+C(YEAR_key)[T.2019]    -0.0283      0.035     -0.805      0.421      -0.097       0.041
+C(YEAR_key)[T.2020]    -0.4942      0.067     -7.339      0.000      -0.626      -0.362
+C(YEAR_key)[T.2021]     0.1374      0.066      2.084      0.037       0.008       0.267
+C(YEAR_key)[T.2022]    -0.0219      0.068     -0.320      0.749      -0.156       0.112
+C(YEAR_key)[T.2023]    -0.2977      0.064     -4.629      0.000      -0.424      -0.172
+C(YEAR_key)[T.2024]    -0.4105      0.065     -6.340      0.000      -0.537      -0.284
+z_ai                    0.0044      0.033      0.134      0.893      -0.060       0.069
+z_log_assets            0.0506      0.044      1.143      0.253      -0.036       0.137
+==============================================================================
+Omnibus:                     1314.146   Durbin-Watson:                   1.291
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):           387441.974
+Skew:                          -1.878   Prob(JB):                         0.00
+Kurtosis:                      70.592   Cond. No.                         8.43
+==============================================================================
+
+Notes:
+[1] Standard Errors are robust to cluster correlation (cluster)
+
+====================================================================================================
+Outcome: ROA_annual_mean
+Model: M3_both_yearFE
+Formula: z_ROA_annual_mean ~ z_traditional + z_ai + z_log_assets + C(YEAR_key)
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:      z_ROA_annual_mean   R-squared:                       0.059
+Model:                            OLS   Adj. R-squared:                  0.055
+Method:                 Least Squares   F-statistic:                     17.42
+Date:                Sun, 10 May 2026   Prob (F-statistic):           6.69e-24
+Time:                        15:03:45   Log-Likelihood:                -2706.2
+No. Observations:                2029   AIC:                             5432.
+Df Residuals:                    2019   BIC:                             5488.
+Df Model:                           9                                         
+Covariance Type:              cluster                                         
+=======================================================================================
+                          coef    std err          z      P>|z|      [0.025      0.975]
+---------------------------------------------------------------------------------------
+Intercept               0.1381      0.034      4.101      0.000       0.072       0.204
+C(YEAR_key)[T.2019]    -0.0289      0.035     -0.825      0.409      -0.098       0.040
+C(YEAR_key)[T.2020]    -0.4934      0.067     -7.347      0.000      -0.625      -0.362
+C(YEAR_key)[T.2021]     0.1350      0.065      2.070      0.038       0.007       0.263
+C(YEAR_key)[T.2022]    -0.0230      0.068     -0.338      0.735      -0.157       0.110
+C(YEAR_key)[T.2023]    -0.2986      0.064     -4.641      0.000      -0.425      -0.173
+C(YEAR_key)[T.2024]    -0.4111      0.065     -6.336      0.000      -0.538      -0.284
+z_traditional           0.0473      0.031      1.504      0.133      -0.014       0.109
+z_ai                   -0.0089      0.032     -0.279      0.780      -0.072       0.054
+z_log_assets            0.0568      0.043      1.334      0.182      -0.027       0.140
+==============================================================================
+Omnibus:                     1318.308   Durbin-Watson:                   1.294
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):           382411.178
+Skew:                          -1.894   Prob(JB):                         0.00
+Kurtosis:                      70.149   Cond. No.                         8.69
+==============================================================================
+
+Notes:
+[1] Standard Errors are robust to cluster correlation (cluster)
+
+====================================================================================================
+Outcome: ROA_annual_mean
+Model: C1_covid_exposure_2020_2022
+Formula: z_ROA_annual_mean ~ z_traditional + z_ai + z_annual_mean_covid_overall_exposure_main_hcr + z_log_assets + C(YEAR_key)
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:      z_ROA_annual_mean   R-squared:                       0.079
+Model:                            OLS   Adj. R-squared:                  0.073
+Method:                 Least Squares   F-statistic:                     18.05
+Date:                Sun, 10 May 2026   Prob (F-statistic):           7.12e-18
+Time:                        15:03:45   Log-Likelihood:                -1097.2
+No. Observations:                 838   AIC:                             2208.
+Df Residuals:                     831   BIC:                             2242.
+Df Model:                           6                                         
+Covariance Type:              cluster                                         
+=================================================================================================================
+                                                    coef    std err          z      P>|z|      [0.025      0.975]
+-----------------------------------------------------------------------------------------------------------------
+Intercept                                        -0.3127      0.072     -4.367      0.000      -0.453      -0.172
+C(YEAR_key)[T.2021]                               0.5423      0.081      6.706      0.000       0.384       0.701
+C(YEAR_key)[T.2022]                               0.4187      0.098      4.271      0.000       0.227       0.611
+z_traditional                                     0.0619      0.030      2.088      0.037       0.004       0.120
+z_ai                                             -0.0574      0.036     -1.576      0.115      -0.129       0.014
+z_annual_mean_covid_overall_exposure_main_hcr    -0.0449      0.037     -1.224      0.221      -0.117       0.027
+z_log_assets                                     -0.0021      0.033     -0.066      0.948      -0.066       0.062
+==============================================================================
+Omnibus:                     1172.339   Durbin-Watson:                   1.821
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):           307571.136
+Skew:                          -7.541   Prob(JB):                         0.00
+Kurtosis:                      95.635   Cond. No.                         4.09
+==============================================================================
+
+Notes:
+[1] Standard Errors are robust to cluster correlation (cluster)
+
+====================================================================================================
+Outcome: ROA_annual_mean
+Model: C2_ai_x_covid_exposure_2020_2022
+Formula: z_ROA_annual_mean ~ z_traditional + z_ai * z_annual_mean_covid_overall_exposure_main_hcr + z_log_assets + C(YEAR_key)
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:      z_ROA_annual_mean   R-squared:                       0.083
+Model:                            OLS   Adj. R-squared:                  0.075
+Method:                 Least Squares   F-statistic:                     15.46
+Date:                Sun, 10 May 2026   Prob (F-statistic):           2.82e-17
+Time:                        15:03:45   Log-Likelihood:                -1095.5
+No. Observations:                 838   AIC:                             2207.
+Df Residuals:                     830   BIC:                             2245.
+Df Model:                           7                                         
+Covariance Type:              cluster                                         
+======================================================================================================================
+                                                         coef    std err          z      P>|z|      [0.025      0.975]
+----------------------------------------------------------------------------------------------------------------------
+Intercept                                             -0.3105      0.072     -4.316      0.000      -0.452      -0.170
+C(YEAR_key)[T.2021]                                    0.5383      0.082      6.587      0.000       0.378       0.698
+C(YEAR_key)[T.2022]                                    0.4088      0.102      4.011      0.000       0.209       0.609
+z_traditional                                          0.0658      0.030      2.180      0.029       0.007       0.125
+z_ai                                                  -0.0567      0.036     -1.563      0.118      -0.128       0.014
+z_annual_mean_covid_overall_exposure_main_hcr         -0.0378      0.034     -1.124      0.261      -0.104       0.028
+z_ai:z_annual_mean_covid_overall_exposure_main_hcr    -0.0596      0.037     -1.606      0.108      -0.132       0.013
+z_log_assets                                          -0.0050      0.033     -0.153      0.879      -0.069       0.059
+==============================================================================
+Omnibus:                     1168.738   Durbin-Watson:                   1.823
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):           301120.489
+Skew:                          -7.504   Prob(JB):                         0.00
+Kurtosis:                      94.645   Cond. No.                         4.10
+==============================================================================
+
+Notes:
+[1] Standard Errors are robust to cluster correlation (cluster)
+
+====================================================================================================
+Outcome: ROA_annual_mean
+Model: C3_traditional_x_covid_exposure_2020_2022
+Formula: z_ROA_annual_mean ~ z_ai + z_traditional * z_annual_mean_covid_overall_exposure_main_hcr + z_log_assets + C(YEAR_key)
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:      z_ROA_annual_mean   R-squared:                       0.080
+Model:                            OLS   Adj. R-squared:                  0.072
+Method:                 Least Squares   F-statistic:                     15.84
+Date:                Sun, 10 May 2026   Prob (F-statistic):           1.12e-17
+Time:                        15:03:45   Log-Likelihood:                -1097.1
+No. Observations:                 838   AIC:                             2210.
+Df Residuals:                     830   BIC:                             2248.
+Df Model:                           7                                         
+Covariance Type:              cluster                                         
+===============================================================================================================================
+                                                                  coef    std err          z      P>|z|      [0.025      0.975]
+-------------------------------------------------------------------------------------------------------------------------------
+Intercept                                                      -0.3126      0.072     -4.365      0.000      -0.453      -0.172
+C(YEAR_key)[T.2021]                                             0.5408      0.081      6.680      0.000       0.382       0.699
+C(YEAR_key)[T.2022]                                             0.4203      0.098      4.297      0.000       0.229       0.612
+z_ai                                                           -0.0590      0.037     -1.603      0.109      -0.131       0.013
+z_traditional                                                   0.0619      0.030      2.087      0.037       0.004       0.120
+z_annual_mean_covid_overall_exposure_main_hcr                  -0.0458      0.037     -1.233      0.217      -0.119       0.027
+z_traditional:z_annual_mean_covid_overall_exposure_main_hcr     0.0180      0.021      0.846      0.397      -0.024       0.060
+z_log_assets                                                   -0.0015      0.032     -0.046      0.964      -0.065       0.062
+==============================================================================
+Omnibus:                     1171.825   Durbin-Watson:                   1.822
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):           306778.312
+Skew:                          -7.536   Prob(JB):                         0.00
+Kurtosis:                      95.514   Cond. No.                         4.09
+==============================================================================
+
+Notes:
+[1] Standard Errors are robust to cluster correlation (cluster)
+
+====================================================================================================
+Outcome: ROA_annual_mean
+Model: C4_both_interactions_2020_2022
+Formula: z_ROA_annual_mean ~ z_ai * z_annual_mean_covid_overall_exposure_main_hcr + z_traditional * z_annual_mean_covid_overall_exposure_main_hcr + z_log_assets + C(YEAR_key)
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:      z_ROA_annual_mean   R-squared:                       0.084
+Model:                            OLS   Adj. R-squared:                  0.075
+Method:                 Least Squares   F-statistic:                     13.90
+Date:                Sun, 10 May 2026   Prob (F-statistic):           3.64e-17
+Time:                        15:03:45   Log-Likelihood:                -1095.1
+No. Observations:                 838   AIC:                             2208.
+Df Residuals:                     829   BIC:                             2251.
+Df Model:                           8                                         
+Covariance Type:              cluster                                         
+===============================================================================================================================
+                                                                  coef    std err          z      P>|z|      [0.025      0.975]
+-------------------------------------------------------------------------------------------------------------------------------
+Intercept                                                      -0.3100      0.072     -4.311      0.000      -0.451      -0.169
+C(YEAR_key)[T.2021]                                             0.5353      0.082      6.524      0.000       0.374       0.696
+C(YEAR_key)[T.2022]                                             0.4105      0.102      4.044      0.000       0.211       0.609
+z_ai                                                           -0.0593      0.037     -1.605      0.109      -0.132       0.013
+z_annual_mean_covid_overall_exposure_main_hcr                  -0.0387      0.034     -1.134      0.257      -0.105       0.028
+z_ai:z_annual_mean_covid_overall_exposure_main_hcr             -0.0662      0.040     -1.646      0.100      -0.145       0.013
+z_traditional                                                   0.0661      0.030      2.187      0.029       0.007       0.125
+z_traditional:z_annual_mean_covid_overall_exposure_main_hcr     0.0314      0.025      1.244      0.214      -0.018       0.081
+z_log_assets                                                   -0.0041      0.032     -0.127      0.899      -0.068       0.059
+==============================================================================
+Omnibus:                     1167.462   Durbin-Watson:                   1.825
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):           299080.767
+Skew:                          -7.490   Prob(JB):                         0.00
+Kurtosis:                      94.330   Cond. No.                         4.10
+==============================================================================
+
+Notes:
+[1] Standard Errors are robust to cluster correlation (cluster)
+
+====================================================================================================
+Outcome: StockReturn_annual_compound_w
+Model: M1_traditional_yearFE
+Formula: z_StockReturn_annual_compound_w ~ z_traditional + z_log_assets + C(YEAR_key)
+                                   OLS Regression Results                                  
+===========================================================================================
+Dep. Variable:     z_StockReturn_annual_compound_w   R-squared:                       0.468
+Model:                                         OLS   Adj. R-squared:                  0.466
+Method:                              Least Squares   F-statistic:                     172.5
+Date:                             Sun, 10 May 2026   Prob (F-statistic):          1.56e-117
+Time:                                     15:03:45   Log-Likelihood:                -2230.1
+No. Observations:                             2018   AIC:                             4478.
+Df Residuals:                                 2009   BIC:                             4529.
+Df Model:                                        8                                         
+Covariance Type:                           cluster                                         
+=======================================================================================
+                          coef    std err          z      P>|z|      [0.025      0.975]
+---------------------------------------------------------------------------------------
+Intercept              -0.6813      0.036    -19.082      0.000      -0.751      -0.611
+C(YEAR_key)[T.2019]     1.2573      0.057     22.204      0.000       1.146       1.368
+C(YEAR_key)[T.2020]    -0.0368      0.050     -0.734      0.463      -0.135       0.061
+C(YEAR_key)[T.2021]     1.9032      0.074     25.821      0.000       1.759       2.048
+C(YEAR_key)[T.2022]     0.2343      0.052      4.526      0.000       0.133       0.336
+C(YEAR_key)[T.2023]     0.3819      0.052      7.369      0.000       0.280       0.484
+C(YEAR_key)[T.2024]     0.9920      0.058     16.967      0.000       0.877       1.107
+z_traditional          -0.0022      0.018     -0.122      0.903      -0.037       0.033
+z_log_assets            0.0269      0.017      1.594      0.111      -0.006       0.060
+==============================================================================
+Omnibus:                      659.844   Durbin-Watson:                   2.143
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):             5554.286
+Skew:                           1.296   Prob(JB):                         0.00
+Kurtosis:                      10.703   Cond. No.                         7.98
+==============================================================================
+
+Notes:
+[1] Standard Errors are robust to cluster correlation (cluster)
+
+====================================================================================================
+Outcome: StockReturn_annual_compound_w
+Model: M2_ai_yearFE
+Formula: z_StockReturn_annual_compound_w ~ z_ai + z_log_assets + C(YEAR_key)
+                                   OLS Regression Results                                  
+===========================================================================================
+Dep. Variable:     z_StockReturn_annual_compound_w   R-squared:                       0.470
+Model:                                         OLS   Adj. R-squared:                  0.468
+Method:                              Least Squares   F-statistic:                     170.0
+Date:                             Sun, 10 May 2026   Prob (F-statistic):          1.22e-116
+Time:                                     15:03:45   Log-Likelihood:                -2226.8
+No. Observations:                             2018   AIC:                             4472.
+Df Residuals:                                 2009   BIC:                             4522.
+Df Model:                                        8                                         
+Covariance Type:                           cluster                                         
+=======================================================================================
+                          coef    std err          z      P>|z|      [0.025      0.975]
+---------------------------------------------------------------------------------------
+Intercept              -0.6790      0.036    -18.974      0.000      -0.749      -0.609
+C(YEAR_key)[T.2019]     1.2580      0.057     22.194      0.000       1.147       1.369
+C(YEAR_key)[T.2020]    -0.0459      0.050     -0.923      0.356      -0.143       0.052
+C(YEAR_key)[T.2021]     1.9049      0.074     25.809      0.000       1.760       2.050
+C(YEAR_key)[T.2022]     0.2315      0.052      4.472      0.000       0.130       0.333
+C(YEAR_key)[T.2023]     0.3793      0.052      7.320      0.000       0.278       0.481
+C(YEAR_key)[T.2024]     0.9884      0.058     16.964      0.000       0.874       1.103
+z_ai                    0.0440      0.017      2.585      0.010       0.011       0.077
+z_log_assets            0.0146      0.018      0.827      0.408      -0.020       0.049
+==============================================================================
+Omnibus:                      642.136   Durbin-Watson:                   2.150
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):             5283.803
+Skew:                           1.261   Prob(JB):                         0.00
+Kurtosis:                      10.515   Cond. No.                         8.44
+==============================================================================
+
+Notes:
+[1] Standard Errors are robust to cluster correlation (cluster)
+
+====================================================================================================
+Outcome: StockReturn_annual_compound_w
+Model: M3_both_yearFE
+Formula: z_StockReturn_annual_compound_w ~ z_traditional + z_ai + z_log_assets + C(YEAR_key)
+                                   OLS Regression Results                                  
+===========================================================================================
+Dep. Variable:     z_StockReturn_annual_compound_w   R-squared:                       0.470
+Model:                                         OLS   Adj. R-squared:                  0.468
+Method:                              Least Squares   F-statistic:                     153.5
+Date:                             Sun, 10 May 2026   Prob (F-statistic):          9.01e-117
+Time:                                     15:03:45   Log-Likelihood:                -2226.4
+No. Observations:                             2018   AIC:                             4473.
+Df Residuals:                                 2008   BIC:                             4529.
+Df Model:                                        9                                         
+Covariance Type:                           cluster                                         
+=======================================================================================
+                          coef    std err          z      P>|z|      [0.025      0.975]
+---------------------------------------------------------------------------------------
+Intercept              -0.6792      0.036    -18.964      0.000      -0.749      -0.609
+C(YEAR_key)[T.2019]     1.2579      0.057     22.207      0.000       1.147       1.369
+C(YEAR_key)[T.2020]    -0.0462      0.050     -0.929      0.353      -0.144       0.051
+C(YEAR_key)[T.2021]     1.9056      0.074     25.859      0.000       1.761       2.050
+C(YEAR_key)[T.2022]     0.2318      0.052      4.475      0.000       0.130       0.333
+C(YEAR_key)[T.2023]     0.3796      0.052      7.328      0.000       0.278       0.481
+C(YEAR_key)[T.2024]     0.9884      0.058     16.961      0.000       0.874       1.103
+z_traditional          -0.0146      0.018     -0.827      0.408      -0.049       0.020
+z_ai                    0.0480      0.017      2.881      0.004       0.015       0.081
+z_log_assets            0.0128      0.018      0.710      0.478      -0.022       0.048
+==============================================================================
+Omnibus:                      646.538   Durbin-Watson:                   2.148
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):             5379.345
+Skew:                           1.268   Prob(JB):                         0.00
+Kurtosis:                      10.586   Cond. No.                         8.69
+==============================================================================
+
+Notes:
+[1] Standard Errors are robust to cluster correlation (cluster)
+
+====================================================================================================
+Outcome: StockReturn_annual_compound_w
+Model: C1_covid_exposure_2020_2022
+Formula: z_StockReturn_annual_compound_w ~ z_traditional + z_ai + z_annual_mean_covid_overall_exposure_main_hcr + z_log_assets + C(YEAR_key)
+                                   OLS Regression Results                                  
+===========================================================================================
+Dep. Variable:     z_StockReturn_annual_compound_w   R-squared:                       0.542
+Model:                                         OLS   Adj. R-squared:                  0.539
+Method:                              Least Squares   F-statistic:                     131.2
+Date:                             Sun, 10 May 2026   Prob (F-statistic):           1.08e-80
+Time:                                     15:03:45   Log-Likelihood:                -1003.1
+No. Observations:                              836   AIC:                             2020.
+Df Residuals:                                  829   BIC:                             2053.
+Df Model:                                        6                                         
+Covariance Type:                           cluster                                         
+=================================================================================================================
+                                                    coef    std err          z      P>|z|      [0.025      0.975]
+-----------------------------------------------------------------------------------------------------------------
+Intercept                                        -0.7199      0.036    -20.272      0.000      -0.789      -0.650
+C(YEAR_key)[T.2021]                               1.9360      0.072     26.974      0.000       1.795       2.077
+C(YEAR_key)[T.2022]                               0.2628      0.065      4.020      0.000       0.135       0.391
+z_traditional                                     0.0193      0.025      0.767      0.443      -0.030       0.069
+z_ai                                              0.0714      0.026      2.694      0.007       0.019       0.123
+z_annual_mean_covid_overall_exposure_main_hcr    -0.0518      0.023     -2.247      0.025      -0.097      -0.007
+z_log_assets                                     -0.0097      0.024     -0.401      0.688      -0.057       0.038
+==============================================================================
+Omnibus:                      344.663   Durbin-Watson:                   2.278
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):             3604.294
+Skew:                           1.573   Prob(JB):                         0.00
+Kurtosis:                      12.674   Cond. No.                         4.09
+==============================================================================
+
+Notes:
+[1] Standard Errors are robust to cluster correlation (cluster)
+
+====================================================================================================
+Outcome: StockReturn_annual_compound_w
+Model: C2_ai_x_covid_exposure_2020_2022
+Formula: z_StockReturn_annual_compound_w ~ z_traditional + z_ai * z_annual_mean_covid_overall_exposure_main_hcr + z_log_assets + C(YEAR_key)
+                                   OLS Regression Results                                  
+===========================================================================================
+Dep. Variable:     z_StockReturn_annual_compound_w   R-squared:                       0.545
+Model:                                         OLS   Adj. R-squared:                  0.541
+Method:                              Least Squares   F-statistic:                     115.2
+Date:                             Sun, 10 May 2026   Prob (F-statistic):           5.11e-81
+Time:                                     15:03:45   Log-Likelihood:                -1000.6
+No. Observations:                              836   AIC:                             2017.
+Df Residuals:                                  828   BIC:                             2055.
+Df Model:                                        7                                         
+Covariance Type:                           cluster                                         
+======================================================================================================================
+                                                         coef    std err          z      P>|z|      [0.025      0.975]
+----------------------------------------------------------------------------------------------------------------------
+Intercept                                             -0.7177      0.035    -20.218      0.000      -0.787      -0.648
+C(YEAR_key)[T.2021]                                    1.9320      0.071     27.127      0.000       1.792       2.072
+C(YEAR_key)[T.2022]                                    0.2522      0.066      3.843      0.000       0.124       0.381
+z_traditional                                          0.0234      0.025      0.929      0.353      -0.026       0.073
+z_ai                                                   0.0722      0.027      2.704      0.007       0.020       0.125
+z_annual_mean_covid_overall_exposure_main_hcr         -0.0441      0.023     -1.937      0.053      -0.089       0.001
+z_ai:z_annual_mean_covid_overall_exposure_main_hcr    -0.0655      0.030     -2.155      0.031      -0.125      -0.006
+z_log_assets                                          -0.0129      0.024     -0.533      0.594      -0.060       0.035
+==============================================================================
+Omnibus:                      339.191   Durbin-Watson:                   2.271
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):             3433.461
+Skew:                           1.552   Prob(JB):                         0.00
+Kurtosis:                      12.431   Cond. No.                         4.10
+==============================================================================
+
+Notes:
+[1] Standard Errors are robust to cluster correlation (cluster)
+
+====================================================================================================
+Outcome: StockReturn_annual_compound_w
+Model: C3_traditional_x_covid_exposure_2020_2022
+Formula: z_StockReturn_annual_compound_w ~ z_ai + z_traditional * z_annual_mean_covid_overall_exposure_main_hcr + z_log_assets + C(YEAR_key)
+                                   OLS Regression Results                                  
+===========================================================================================
+Dep. Variable:     z_StockReturn_annual_compound_w   R-squared:                       0.543
+Model:                                         OLS   Adj. R-squared:                  0.540
+Method:                              Least Squares   F-statistic:                     114.4
+Date:                             Sun, 10 May 2026   Prob (F-statistic):           1.05e-80
+Time:                                     15:03:45   Log-Likelihood:                -1001.9
+No. Observations:                              836   AIC:                             2020.
+Df Residuals:                                  828   BIC:                             2058.
+Df Model:                                        7                                         
+Covariance Type:                           cluster                                         
+===============================================================================================================================
+                                                                  coef    std err          z      P>|z|      [0.025      0.975]
+-------------------------------------------------------------------------------------------------------------------------------
+Intercept                                                      -0.7203      0.036    -20.128      0.000      -0.790      -0.650
+C(YEAR_key)[T.2021]                                             1.9398      0.072     26.926      0.000       1.799       2.081
+C(YEAR_key)[T.2022]                                             0.2590      0.066      3.941      0.000       0.130       0.388
+z_ai                                                            0.0753      0.027      2.774      0.006       0.022       0.129
+z_traditional                                                   0.0193      0.025      0.764      0.445      -0.030       0.069
+z_annual_mean_covid_overall_exposure_main_hcr                  -0.0495      0.023     -2.181      0.029      -0.094      -0.005
+z_traditional:z_annual_mean_covid_overall_exposure_main_hcr    -0.0453      0.026     -1.711      0.087      -0.097       0.007
+z_log_assets                                                   -0.0114      0.024     -0.469      0.639      -0.059       0.036
+==============================================================================
+Omnibus:                      341.112   Durbin-Watson:                   2.267
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):             3501.794
+Skew:                           1.558   Prob(JB):                         0.00
+Kurtosis:                      12.530   Cond. No.                         4.09
+==============================================================================
+
+Notes:
+[1] Standard Errors are robust to cluster correlation (cluster)
+
+====================================================================================================
+Outcome: StockReturn_annual_compound_w
+Model: C4_both_interactions_2020_2022
+Formula: z_StockReturn_annual_compound_w ~ z_ai * z_annual_mean_covid_overall_exposure_main_hcr + z_traditional * z_annual_mean_covid_overall_exposure_main_hcr + z_log_assets + C(YEAR_key)
+                                   OLS Regression Results                                  
+===========================================================================================
+Dep. Variable:     z_StockReturn_annual_compound_w   R-squared:                       0.546
+Model:                                         OLS   Adj. R-squared:                  0.541
+Method:                              Least Squares   F-statistic:                     101.2
+Date:                             Sun, 10 May 2026   Prob (F-statistic):           1.80e-80
+Time:                                     15:03:45   Log-Likelihood:                -999.93
+No. Observations:                              836   AIC:                             2018.
+Df Residuals:                                  827   BIC:                             2060.
+Df Model:                                        8                                         
+Covariance Type:                           cluster                                         
+===============================================================================================================================
+                                                                  coef    std err          z      P>|z|      [0.025      0.975]
+-------------------------------------------------------------------------------------------------------------------------------
+Intercept                                                      -0.7183      0.036    -20.109      0.000      -0.788      -0.648
+C(YEAR_key)[T.2021]                                             1.9351      0.072     27.048      0.000       1.795       2.075
+C(YEAR_key)[T.2022]                                             0.2505      0.066      3.803      0.000       0.121       0.380
+z_ai                                                            0.0750      0.027      2.769      0.006       0.022       0.128
+z_annual_mean_covid_overall_exposure_main_hcr                  -0.0432      0.023     -1.901      0.057      -0.088       0.001
+z_ai:z_annual_mean_covid_overall_exposure_main_hcr             -0.0586      0.031     -1.894      0.058      -0.119       0.002
+z_traditional                                                   0.0230      0.025      0.913      0.361      -0.026       0.072
+z_traditional:z_annual_mean_covid_overall_exposure_main_hcr    -0.0334      0.026     -1.298      0.194      -0.084       0.017
+z_log_assets                                                   -0.0138      0.024     -0.570      0.569      -0.061       0.034
+==============================================================================
+Omnibus:                      337.147   Durbin-Watson:                   2.263
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):             3377.509
+Skew:                           1.543   Prob(JB):                         0.00
+Kurtosis:                      12.351   Cond. No.                         4.10
+==============================================================================
+
+Notes:
+[1] Standard Errors are robust to cluster correlation (cluster)
